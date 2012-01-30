@@ -14,7 +14,7 @@ $(document).ready ->
   
   _showComments = (e) ->
     e.preventDefault
-    $('#facebook_com').show()
+    $('#facebook_com').show('slow')
     
   _showFriends = (e) ->
     e.preventDefault
@@ -33,6 +33,8 @@ $(document).ready ->
   $('#show_friends').click _showFriends
   
   $('#close').click _hideFriends
+  
+  $('#image-upload').click _showComments
   
   
 #   

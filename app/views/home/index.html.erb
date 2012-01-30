@@ -9,10 +9,10 @@
     </br></br>    
     <div id="upload">
       <div id="image">
-        <%= image_tag current_user.image_url.to_s %>
       </div>  
       <h3>Upload an image</h3>
       <%= render 'shared/upload'%>
+      <%= image_tag current_user.image_url.to_s %>
     </div>
     
     </br></br>
