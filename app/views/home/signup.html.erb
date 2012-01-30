@@ -1,0 +1,11 @@
+<div class="box small" id="signup">
+
+  <h1><%= @title %></h1>
+
+  <div class="social">
+    <h2>Signup with Facebook or Twitter</h2>
+    <%= link_to '', user_omniauth_authorize_path(:facebook), { :class => 'icon facebook' } %>
+    <a href="#" class="icon twitter"></a>
+  </div>
+
+</div>

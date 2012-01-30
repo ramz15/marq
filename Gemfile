@@ -1,12 +1,29 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
-
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
+gem 'mysql2'
+gem 'therubyracer'
+gem 'carrierwave'
+gem 'twitter-bootstrap-rails'
 
+# authentication logic
+# and authorization
+gem 'devise', '1.4.9'
+gem 'omniauth', '0.3.2'
+gem 'cancan'
+
+# UI
+# gem port of twitter bootstrap to sass,
+# and formtastic-bootstrap to work with formtastic
+# and emberjs, rails gem for emberjs framework
+gem 'bootstrap-sass'
+gem 'formtastic-bootstrap'
+gem 'emberjs-rails'
+
+group :development, :test do
+  gem 'rspec-rails', '2.8.1'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -17,6 +34,16 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :test do
+  gem 'rspec-rails', '2.8.1'
+  gem 'spork', '0.9.0.rc'
+  gem 'factory_girl_rails', "~> 1.2"
+end
+
+group :production do
+  gem 'pg', '0.12.2'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

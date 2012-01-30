@@ -1,0 +1,43 @@
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '<%= Rails.application.config.facebook_app_id %>', // App ID
+      channelUrl : '//<%= Rails.application.config.host_url %>/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+    // Additional initialization code here
+    
+    $('#fb').click(function (e) { 
+      e.preventDefault;
+      FB.login(function(response) {
+         if (response.authResponse) {
+           FB.api('/me/friends', function(response) {
+             console.log(response);
+             if(response.data) {
+               $.each(response.data, function(index,friend) {
+                 var div = '<div id="fb-friend"><img src="https://graph.facebook.com/' + friend.id + '/picture"/><span id="fb-name"><a href="http://facebook.com/' + friend.id + '" target="_tab">' + friend.name + '</a></span></div>';
+                 $(div).appendTo("#friends");
+               });
+             } else {
+                 alert("Error!");
+               }
+           });
+         }
+         else {
+             console.log('User cancelled login or did not fully authorize.');
+           }
+         }, {scope: 'email'});
+    });
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     d.getElementsByTagName('head')[0].appendChild(js);
+   }(document));
+</script>

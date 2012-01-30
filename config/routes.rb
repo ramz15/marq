@@ -1,4 +1,30 @@
 Marqueed::Application.routes.draw do
+  
+  get "home/index" => 'home#index'
+
+  get "home/login" => 'home#login'
+
+  get "home/signup" => 'home#signup'
+  
+  resources :users
+
+  devise_for :users,
+             :controllers => {
+               :omniauth_callbacks => "users/omniauth_callbacks",
+               :sessions => 'sessions',
+               :registrations => 'registrations'
+             } do
+
+    # route :providers to 404 if doesn't exist
+    get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+
+  end
+
+  root :to => "home#index"
+  
+  # facebook channel process
+  get '/channel' => 'application#channel'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

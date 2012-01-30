@@ -13,6 +13,9 @@ Marqueed::Application.configure do
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
+  
+  # Using devise on Heroku with Ruby on Rails 3.1 requires setting:
+  config.assets.initialize_on_precompile = false
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
@@ -40,7 +43,7 @@ Marqueed::Application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  # config.action_controller.asset_host = "http://assets.example.com"
+  # config.action_controller.asset_host = "http://assets.marqueed.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
@@ -57,4 +60,13 @@ Marqueed::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  # default mailer url
+  # config.action_mailer.default_url_options = { :host => 'marqueed.com' }
+
+  config.host_url = 'marqueed.heroku.com'
+
+  # facebook credentials
+  config.facebook_app_id = '354532131241193'
+  config.facebook_app_secret = '3e31059a501e0094d34d45bde558fb2a'
 end

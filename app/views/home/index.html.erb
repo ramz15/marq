@@ -1,0 +1,30 @@
+<div align="center">
+  
+    </br></br>
+    <div id="login">
+      <h2>Signup with Facebook</h2></br>
+      <%= link_to '', user_omniauth_authorize_path(:facebook), { :class => 'icon facebook', :id => 'fb' } %>
+    </div>  
+    
+    </br></br>    
+    <div id="upload">
+      <div id="image">
+        <%= image_tag current_user.image_url.to_s %>
+      </div>  
+      <h3>Upload an image</h3>
+      <%= render 'shared/upload'%>
+    </div>
+    
+    </br></br>
+    <div id="facebook_com">
+      <div class="fb-comments" data-href="<%= request.url %>" data-num-posts="2" data-width="550"></div> 
+    </div>  
+      
+    <div id="friend-box">
+      <img src="/assets/close.png" id="close"/>
+      <div id="friends">
+      </div> 
+    </div>  
+    
+</div>
+

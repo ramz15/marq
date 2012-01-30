@@ -27,4 +27,17 @@ Marqueed::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  # Setup options for action mailer (devise auth)
+  config.action_mailer.default_url_options = { :host => 'marq.dev:3000' }
+  
+  # setup asset_host so asset_path() has full url
+  config.action_controller.asset_host = 'http://marq.dev:3000'
+  
+  # host url without protocol
+  config.host_url = 'marq.dev:3000'
+
+  # facebook credentials
+  config.facebook_app_id = '315995968446569'
+  config.facebook_app_secret = '9da5d3610e9849c8f9594204441b5644'
 end

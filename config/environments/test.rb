@@ -36,4 +36,13 @@ Marqueed::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+  
+  # Allow pass debug_assets=true as a query parameter to load pages with unpackaged assets
+  config.assets.allow_debugging = true
+
+  config.host_url = 'marq.dev:3000'
+
+  # facebook credentials
+  config.facebook_app_id = ''
+  config.facebook_app_secret = ''
 end
