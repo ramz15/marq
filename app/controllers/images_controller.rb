@@ -19,7 +19,7 @@ class ImagesController < ApplicationController
     @image = Image.new(params[:image])
     # respond_to do |format|
     #   if @image.save
-    #     format.html { render :nothing => true}
+    #     format.html { render :nothing => :true}
     #     format.js { render :nothing => true}
     #   end
     # end

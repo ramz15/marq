@@ -6,5 +6,5 @@ class Image < ActiveRecord::Base
   validate :image, :presence => true
   
   mount_uploader :image, ImageUploader
-  
+    
 end

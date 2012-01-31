@@ -42,7 +42,7 @@ $(document).ready ->
   
   $('#close').click _hideFriends
   
-  $('#image-upload').click _showImages
+  # $('#image-upload').click _showImages
   
   $('.close').click _closeFlash
   
