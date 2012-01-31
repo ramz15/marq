@@ -26,6 +26,14 @@ $(document).ready ->
     $('#friend-box').fadeOut('slow')  
     $('#my-modal').fadeOut('slow')
     
+  _showImages = (e) ->
+    e.preventDefault
+    $('#images-show').fadeIn('slow')
+    
+  _closeFlash = (e) ->
+    e.preventDefault
+    $('.close').remove()  
+    
   $('.icon').click _removeLogin
   
   $('.facebook').click _showUpload
@@ -34,7 +42,9 @@ $(document).ready ->
   
   $('#close').click _hideFriends
   
-  $('#image-upload').click _showComments
+  $('#image-upload').click _showImages
+  
+  $('.close').click _closeFlash
   
   
 #   

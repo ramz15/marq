@@ -1,0 +1,13 @@
+<div id="images">
+  <% for image in @images %>
+      <%= image_tag image.image_url.to_s, :size => "300x200" %></br>
+      <%= link_to "delete", image, :method => :delete, :remote => true, :confirm => "You sure?", :title => "Delete Image" %>    
+      <div id="facebook_com">
+        <div class="fb-comments" data-href="<%= request.url %>" data-num-posts="2" data-width="550"></div> 
+      </div>
+  <% end %>  
+</div>  
+
+<p>
+  <%= link_to "Add an Image", new_image_path %>
+</p>

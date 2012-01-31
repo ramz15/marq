@@ -5,7 +5,6 @@ gem 'sqlite3'
 gem 'mysql2'
 gem 'therubyracer'
 gem 'carrierwave'
-gem 'twitter-bootstrap-rails'
 
 # authentication logic
 # and authorization

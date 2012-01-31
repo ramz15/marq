@@ -7,6 +7,7 @@ Marqueed::Application.routes.draw do
   get "home/signup" => 'home#signup'
   
   resources :users
+  resources :images
 
   devise_for :users,
              :controllers => {
