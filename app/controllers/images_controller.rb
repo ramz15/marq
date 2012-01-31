@@ -25,7 +25,7 @@ class ImagesController < ApplicationController
     # end
     if @image.save
       flash[:success] = "Successfully uploaded an image"
-      redirect_to image_path and return
+      redirect_to images_path and return
     else
       flash[:error] = "Error with image upload"
       redirect_to new_image_path and return
